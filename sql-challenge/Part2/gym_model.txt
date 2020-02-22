@@ -1,0 +1,27 @@
+gym
+-
+gym_id INTEGER PK
+address VARCHAR
+open_date DATE
+
+members
+-
+member_id INTEGER PK
+first_name VARCHAR
+last_name VARCHAR
+credit_card VARCHAR
+trainer_id INTEGER FK >- trainers.trainer_id
+gym_id INTEGER FK >- gym.gym_id
+
+trainers
+-
+trainer_id INTEGER PK
+first_name VARCHAR
+last_name VARCHAR
+salary INTEGER
+gym_id INTEGER FK >- gym.gym_id
+
+payments
+-
+payment_id INTEGER PK
+member_id INTEGER FK >- members.member_id
